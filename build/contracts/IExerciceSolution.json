@@ -268,7 +268,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.6.0;\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\n\ninterface IExerciceSolution is IERC20\n{\n\n  function symbol() external view returns (string memory);\n    \n  function getToken() external returns (bool);\n\n  function buyToken() external payable returns (bool);\n\n  function isCustomerWhiteListed(address customerAddress) external returns (bool);\n\n  function customerTierLevel(address customerAddress) external returns (uint256);\n}\n",
-  "sourcePath": "/home/everaere/Téléchargements/erc20-101-main/contracts/IExerciceSolution.sol",
+  "sourcePath": "C:\\Github\\BP-TD4\\contracts\\IExerciceSolution.sol",
   "ast": {
     "absolutePath": "project:/contracts/IExerciceSolution.sol",
     "exportedSymbols": {
@@ -1172,7 +1172,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-21T17:05:19.589Z",
+  "updatedAt": "2021-11-22T16:24:11.699Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
