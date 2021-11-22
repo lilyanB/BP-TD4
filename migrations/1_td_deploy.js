@@ -15,7 +15,7 @@ module.exports = (deployer, network, accounts) => {
 };
 
 async function deployTDToken(deployer, network, accounts) {
-	TDToken = await TDErc20.new("TLCoin","TLC",web3.utils.toBN("522222"))
+	TDToken = await TDErc20.new("TLCoin","TLC",web3.utils.toBN("20000000000000000000000000000"))
 }
 
 async function deployEvaluator(deployer, network, accounts) {
