@@ -1,5 +1,9 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
+<<<<<<< HEAD
 var mnemonic = "adult obvious old snake apple blade machine skate rack public patient machine"
+=======
+var mnemonic = "rib expose local action maze hollow diary arena page mule nut private"
+>>>>>>> main
 var infuraApiKey = "c40e33dbb5734e61bdf6ad5e2aa16a9b"
 /**
  * Use this file to configure your truffle project. It's seeded with some
