@@ -6,7 +6,7 @@ interface IExerciceSolution is IERC20
 
   function symbol() external view returns (string memory);
     
-  function getToken() external returns (bool);
+  function getToken(uint256 amount) external returns (bool);
 
   function buyToken() external payable returns (bool);
 
