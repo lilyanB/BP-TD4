@@ -74,4 +74,13 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 
 ## Installing
 
+mnémonic:
+rib expose local action maze hollow diary arena page mule nut private
+Api infura:
+c40e33dbb5734e61bdf6ad5e2aa16a9b
 
+notre contrat:
+https://rinkeby.etherscan.io/address/0x03065c887fEE8e392Ade23D4d8E5e2feE07b47A7
+
+notre adresse:
+https://rinkeby.etherscan.io/address/0x607ec1a7f093801b40dae21131ddadb8ce991106
