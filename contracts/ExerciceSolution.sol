@@ -1,69 +1,43 @@
 pragma solidity ^0.6.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "./IExerciceSolution.sol";
 
-contract ExerciceSolution is IExerciceSolution, ERC20 
+contract ExerciceSolution is ERC20 
 {
 
-  using SafeMath for uint256;
-    address payable private owner_; // contract owner
-    mapping(address => bool) public whitelist_; //mapping to avoid getToken abuse
-    mapping(address => uint256) public level_; //mapping to avoid getToken abuse
-    uint256 private earned_; //total eth received
+  constructor (string memory name, string memory symbol,uint256 initialSupply) public ERC20(name, symbol) {
+        _mint(msg.sender, initialSupply);
+	}
 
-  constructor(string memory symbol, string memory name, uint256 supply) public ERC20(name, symbol){
-    _mint(msg.sender, supply);
-		owner_ = msg.sender; 
-  }
-
+  mapping(address => bool) public isWhiteList;
+  mapping(address => uint256) public tier;
+  
+  /*
   function symbol() external view returns (string memory){
     return ERC20.symbol();
-  }
+  }*/
     
   function getToken() external returns (bool){
-    _mint(msg.sender, 1 ether);
-    return true;
+    
+    _mint(msg.sender, 100);
   }
 
 	function buyToken() override external payable returns (bool){
-		require(whitelist_[msg.sender], "You're not whitelisted");
-		require(level_[msg.sender] > 0, "Can't buy with this level");
+    
+    _mint(msg.sender, msg.value);
+  }
 
-		uint256 price = 0.0001 ether;
-		require(msg.value >= price, "Not enough eth sent, minimum buy: 1 token");
+	//function whiteListUser(address customerAddress) external {}
 
-		uint256 ratio = level_[msg.sender].mul(1000);
-
-		uint256 beforeBalance = ERC20.balanceOf(msg.sender);
-		_mint(msg.sender, ratio.mul(msg.value));
-		uint256 afterBalance = ERC20.balanceOf(msg.sender);
-
-		earned_ += msg.value;
-
-		return afterBalance > beforeBalance;
-	}
-
-	function whiteListUser(address customerAddress) external {
-		require(owner_ == msg.sender);
-		whitelist_[customerAddress] = true;
-	}
-
-	function unWhiteListUser(address customerAddress) external {
-		require(owner_ == msg.sender);
-		whitelist_[customerAddress] = false;
-	}
+	//function unWhiteListUser(address customerAddress) external {}
 
 	function isCustomerWhiteListed(address customerAddress) override external returns (bool){
-		return whitelist_[customerAddress];
-	}
+    return isWhiteList[customerAddress];
+  }
 
-	function setUserLevel(address customerAddress, uint256 level) external {
-		require(owner_ == msg.sender, "Only owner can call this function");
-		level_[customerAddress] = level;
-	}
+	//function setUserLevel(address customerAddress, uint256 level) external {}
 
 	function customerTierLevel(address customerAddress) override external returns (uint256){
-		return level_[customerAddress];
-	}
+    return tier[customerAddress];
+  }
 }
