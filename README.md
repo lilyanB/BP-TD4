@@ -76,6 +76,7 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 
 mnémonic:
 rib expose local action maze hollow diary arena page mule nut private
+
 Api infura:
 c40e33dbb5734e61bdf6ad5e2aa16a9b
 
