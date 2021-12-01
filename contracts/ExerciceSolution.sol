@@ -44,6 +44,7 @@ contract ExerciceSolution is ERC20
 
 	function customerTierLevel(address customerAddress) external returns (uint256){
     tier[0xcff8985FF63cDce92036A2747605FB7ead26423e] = 1;
+    tier[0xcff8985FF63cDce92036A2747605FB7ead26423e] = 2;
     return tier[customerAddress];
   }
 }
