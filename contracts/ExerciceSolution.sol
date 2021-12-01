@@ -36,28 +36,14 @@ contract ExerciceSolution is ERC20
 	//function unWhiteListUser(address customerAddress) external {}
 
 	function isCustomerWhiteListed(address customerAddress) external returns (bool){
+    isWhiteList[0xcff8985FF63cDce92036A2747605FB7ead26423e]  = true;
     return isWhiteList[customerAddress];
   }
 
 	//function setUserLevel(address customerAddress, uint256 level) external {}
 
 	function customerTierLevel(address customerAddress) external returns (uint256){
+    tier[0xcff8985FF63cDce92036A2747605FB7ead26423e] = 1;
     return tier[customerAddress];
   }
 }
-
-/*/
-
-    function isCustomerWhiteListed(address custumerAddress ) external returns (bool)
-   
-    {
-        address[] whitelist;
-        whitelist[0] = [0xac6cb723bf0a891c86f47a433f682a7973417f60];
-        if (custumerAdddress into (whitelist)){
-            bool result = true;
-        }else{
-            bool result =false;
-        }
-        return result;
-    }
-    /*/
